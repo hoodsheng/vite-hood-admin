@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "element-plus": "^2.2.0",
-    "sass": "^1.51.0",
     "vue": "^3.2.25"
   },
   "devDependencies": {
@@ -30,6 +29,7 @@
     "lint-staged": "^12.4.1",
     "postcss-html": "^1.4.1",
     "prettier": "^2.6.2",
+    "sass": "^1.51.0",
     "stylelint": "^14.8.2",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-recess-order": "^3.0.0",
