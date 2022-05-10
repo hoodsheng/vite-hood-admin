@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "element-plus": "^2.2.0",
-    "vue": "^3.2.25"
+    "vue": "^3.2.25",
+    "vue-router": "^4.0.13"
   },
   "devDependencies": {
     "@amatlash/vite-plugin-stylelint": "^1.2.0",

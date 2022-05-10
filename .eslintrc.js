@@ -25,6 +25,7 @@ module.exports = {
     'prettier/prettier': 'error',
     quotes: ['error', 'single'],
     semi: ['error', 'always'],
-    'vue/no-multiple-template-root': 0
+    'vue/no-multiple-template-root': 0,
+    'vue/multi-word-component-names': 0
   }
 };
