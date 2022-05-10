@@ -1,7 +1,9 @@
 <template>
   <div class="layout">
     <el-container>
-      <el-aside class="aside">Aside</el-aside>
+      <el-aside class="aside">
+        <MenuBar></MenuBar>
+      </el-aside>
       <el-container>
         <el-header>Header</el-header>
         <el-main>Main</el-main>
@@ -9,6 +11,10 @@
     </el-container>
   </div>
 </template>
+
+<script setup lang="ts">
+import MenuBar from './menu/MenuBar.vue';
+</script>
 
 <style lang="scss" scoped>
 .layout {
@@ -20,7 +26,6 @@
 
   .aside {
     width: 200px;
-    background-color: #f91;
   }
 }
 </style>

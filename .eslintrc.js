@@ -26,6 +26,9 @@ module.exports = {
     quotes: ['error', 'single'],
     semi: ['error', 'always'],
     'vue/no-multiple-template-root': 0,
-    'vue/multi-word-component-names': 0
+    'vue/multi-word-component-names': 0,
+    '@typescript-eslint/no-unused-vars': 'off',
+    'no-unused-vars': 'off',
+    'vue/no-v-for-template-key': 0
   }
 };
