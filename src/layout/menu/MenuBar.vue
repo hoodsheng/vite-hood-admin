@@ -156,21 +156,24 @@ const handleClose = (key: string, keyPath: string[]) => {
 
 <style scoped lang="scss">
 :deep(.el-menu-item:hover) {
-  background-color: transparent;
   color: #18f1f2;
+  background-color: transparent;
 }
+
 :deep(.el-menu-item [class^='el-icon']) {
   width: 30px;
   height: 30px;
-  border-radius: 8px;
   background-color: #0e1618;
+  border-radius: 8px;
 }
+
 :deep(.el-sub-menu .el-icon) {
   width: 30px;
   height: 30px;
-  border-radius: 8px;
   background-color: #0e1618;
+  border-radius: 8px;
 }
+
 :deep(.el-sub-menu .el-sub-menu__icon-arrow) {
   margin-top: -13px;
 }
