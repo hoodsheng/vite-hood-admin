@@ -10,7 +10,7 @@
     @open="handleOpen"
     @close="handleClose"
   >
-    <MenuItem :menuList="menuList"></MenuItem>
+    <MenuItem :menuList="menuList"> </MenuItem>
   </el-menu>
 </template>
 
