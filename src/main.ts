@@ -2,6 +2,8 @@ import { createApp } from 'vue';
 import App from './App.vue';
 // 引入路由
 import router from './router';
+// 引入store
+import store from './store';
 // 全局引入element-plus
 import ElementPlus from 'element-plus';
 import 'element-plus/dist/index.css';
@@ -17,5 +19,6 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 }
 
 app.use(router);
+app.use(store);
 app.use(ElementPlus);
 app.mount('#app');

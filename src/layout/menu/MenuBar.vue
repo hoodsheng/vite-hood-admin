@@ -1,21 +1,27 @@
 <template>
-  <MenuLogo></MenuLogo>
-  <el-menu
-    default-active="1"
-    class="el-menu-vertical-demo"
-    :collapse="isCollapse"
-    background-color="#fff"
-    text-color="#292d32"
-    active-text-color="#0082cb"
-    @open="handleOpen"
-    @close="handleClose"
-  >
-    <MenuItem :menuList="menuList"> </MenuItem>
-  </el-menu>
+  <div class="menu" :style="{ width: !status ? '200px' : '64px' }">
+    <MenuLogo v-if="!status"></MenuLogo>
+    <el-menu
+      :default-active="activeIndex"
+      class="el-menu-vertical-demo"
+      :collapse="status"
+      :collapse-transition="false"
+      background-color="#fff"
+      text-color="#292d32"
+      active-text-color="#0082cb"
+      @open="handleOpen"
+      @close="handleClose"
+      router
+    >
+      <MenuItem :menuList="menuList"> </MenuItem>
+    </el-menu>
+  </div>
 </template>
 
 <script setup lang="ts">
-import { ref, reactive } from 'vue';
+import { reactive, computed } from 'vue';
+import { useRoute } from 'vue-router';
+import { useHeaderStore } from '@/store';
 import MenuItem from './MenuItem.vue';
 import MenuLogo from './MenuLogo.vue';
 
@@ -145,8 +151,13 @@ let menuList = reactive([
     ]
   }
 ]);
-
-const isCollapse = ref(false);
+const route = useRoute();
+const activeIndex = computed(() => {
+  return route.path;
+});
+// 获取store对象
+const headerStore = useHeaderStore();
+const status = computed(() => headerStore.getCollapse);
 const handleOpen = (key: string, keyPath: string[]) => {
   console.log(key, keyPath);
 };
@@ -156,9 +167,35 @@ const handleClose = (key: string, keyPath: string[]) => {
 </script>
 
 <style scoped lang="scss">
+.menu {
+  height: 100vh;
+  overflow-x: hidden;
+  transition: width 0.3s ease;
+}
+@keyframes logo-animation {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.layout-logo {
+  animation: logo-animation 1s ease-out;
+}
+
 .el-menu-vertical-demo {
-  height: calc(100vh - 60px);
   border-right: none;
+}
+
+.el-menu-vertical-demo:not(.el-menu--collapse) {
+  width: 200px;
 }
 
 :deep(.el-menu-item) {
