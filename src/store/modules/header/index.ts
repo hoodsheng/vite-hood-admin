@@ -6,7 +6,7 @@ const useHeaderStore = defineStore('header', {
   }),
   getters: {
     // 获取菜单收缩状态
-    getCollapse: (state) => state.collapse
+    getCollapse: (state: { collapse: boolean }) => state.collapse
   },
 
   actions: {

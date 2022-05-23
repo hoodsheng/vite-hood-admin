@@ -3,7 +3,7 @@ import App from './App.vue';
 // 引入路由
 import router from './router';
 // 引入store
-import store from './store';
+import store from './store/index';
 // 全局引入element-plus
 import ElementPlus from 'element-plus';
 import 'element-plus/dist/index.css';
