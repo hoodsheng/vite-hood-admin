@@ -19,7 +19,7 @@ const tabs: Ref<RouteLocationMatched[]> = ref([]);
 const getBreadcrumb = () => {
   //获取所有有meta和title
   let matched = route.matched.filter((item) => item.meta && item.meta.title);
-  console.log(matched);
+  // console.log(matched);
   //设置面包屑导航数据
   tabs.value = matched;
 };
