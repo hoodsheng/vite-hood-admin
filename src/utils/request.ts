@@ -161,6 +161,7 @@ class Requset {
         });
     });
   }
+  // 兼容REST API
   getRestApi<T = any>(url: string, parms?: any): Promise<Result<T>> {
     return new Promise((resolve, reject) => {
       this.instance
